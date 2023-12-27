@@ -59,7 +59,7 @@ class MainView: UIView {
         imageView.image = UIImage(systemName: "hourglass")
         imageView.contentMode = .scaleAspectFit
         imageView.isHidden = true
-        imageView.tintColor = #colorLiteral(red: 0.6700997949, green: 0.02941261418, blue: 0.1527844965, alpha: 1)
+        imageView.tintColor = .black
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
