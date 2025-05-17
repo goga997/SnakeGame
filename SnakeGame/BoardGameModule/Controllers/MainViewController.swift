@@ -26,6 +26,8 @@ class MainViewController: UIViewController {
         mainView.boardDelegate = self
         mainView.updateScoreLabels(score: 0, toNextLevel: gameDetails.toNextLevel)
         mainView.setProgress(gameDetails.toNextLevel)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(updateHeartsLabel), name: HeartManager.heartsUpdatedNotification, object: nil)
     }
     
     init(gameDetails: GameDetails) {
@@ -36,7 +38,11 @@ class MainViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-   
+    
+    @objc func updateHeartsLabel() {
+        mainView.heartsLabel.text = "\(HeartManager.hearts)"
+    }
+
 // Updating Functions
     func updateSnake(_ snake: [GameCell]) {
         let boardView = mainView.subviews[0] as? BoardView
@@ -66,8 +72,16 @@ class MainViewController: UIViewController {
 
 //Play Button + Pause Button
     @objc func playButtonTapped() {
-        if gameModel == nil {
+        
+        if gameModel == nil || gameModel?.isGameOver == true {
+            guard HeartManager.hearts > 0 else {
+                    print("no more hearts")
+                    return
+                }
+                HeartManager.hearts -= 1
+            
             gameModel = GameModel(vc: self, gameDetails: gameDetails)
+            gameModel?.isGameOver = false
         } else {
             gameModel?.gameTimer.startTimer()
         }
@@ -98,6 +112,8 @@ class MainViewController: UIViewController {
         
         mainView.playButton.isHidden = false
         mainView.pauseButton.isHidden = true
+        gameModel?.isGameOver = true
+
     }
 }
 
@@ -114,7 +130,3 @@ extension MainViewController: BoardProtocol {
         }
     }
 }
-
-
-
-

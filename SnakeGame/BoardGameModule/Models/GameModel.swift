@@ -21,6 +21,8 @@ class GameModel {
     let gameTimer = GameTimer()
     let customAlert = CustomAlert()
     
+    var isGameOver: Bool = false
+    
     private weak var viewController: MainViewController?
     
     //MARK: - Initialization + funcs

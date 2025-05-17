@@ -69,6 +69,18 @@ class MainView: UIView {
     lazy var pauseButton = ControlButton(image: "pause")
     lazy var backToOptionsButton = ControlButton(image: "arrowshape.turn.up.backward")
     
+    var heartsLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 22, weight: .bold)
+        label.textColor = .black
+        label.text = "\(HeartManager.hearts)"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    
+    private let iconHeart = UIComponents.createHeartImageView()
+
     //MARK: - Initialization
     
     override init(frame: CGRect) {
@@ -97,6 +109,7 @@ class MainView: UIView {
         configurePauseButton()
         configureBackToOptionsButton()
         
+        configureHeartsLabel()
     }
     
     override func layoutSubviews() {
@@ -104,6 +117,22 @@ class MainView: UIView {
         configureProgressView()
         configureNextLevelNumberLabel()
         configureMainLabelToNext()
+    }
+    
+    private func configureHeartsLabel() {
+        
+        addSubview(heartsLabel)
+        addSubview(iconHeart)
+        
+        NSLayoutConstraint.activate([
+            heartsLabel.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -22),
+            heartsLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            
+            iconHeart.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -24),
+            iconHeart.leadingAnchor.constraint(equalTo: heartsLabel.trailingAnchor, constant: 4),
+            iconHeart.heightAnchor.constraint(equalToConstant: 32),
+            iconHeart.widthAnchor.constraint(equalToConstant: 32),
+        ])
     }
     
     private func configureBoardView() {

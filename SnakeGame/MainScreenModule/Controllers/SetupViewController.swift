@@ -10,10 +10,13 @@ import UIKit
 class SetupViewController: UIViewController {
     
     private let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-
+    
     private var mainSetUpView: MainSetupView? {
         view as? MainSetupView
     }
+    
+    private lazy var popUpView = PopUpView()
+    private var giftButton: UIButton?
     
     override func loadView() {
         self.view = MainSetupView()
@@ -22,6 +25,17 @@ class SetupViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureBackImage()
+        HeartManager.checkResetIfNeeded() //call it only once per loading app
+        mainSetUpView?.heartsLabel.text = "\(HeartManager.hearts)"
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(updateHeartsLabel),
+                                               name: HeartManager.heartsUpdatedNotification,
+                                               object: nil)
+    }
+
+    
+    @objc func updateHeartsLabel() {
+        mainSetUpView?.heartsLabel.text = "\(HeartManager.hearts)"
     }
     
     private func configureBackImage() {
@@ -45,7 +59,7 @@ class SetupViewController: UIViewController {
         case 4: //veryHardButton
             gameDetails = GameDetails(cols: 8, rows: 8, toNextLevel: 4)
         default:
-            print("Erron level Button")
+            print("Error level Button")
         }
         
         let mainVC = MainViewController(gameDetails: gameDetails)
@@ -53,6 +67,13 @@ class SetupViewController: UIViewController {
         mainVC.modalTransitionStyle = .flipHorizontal
         HapticsManager.shared.vibrate(for: .success)
         present(mainVC, animated: true)
+        
+    }
+    
+    func showAlertNoHearts() {
+        let alert = UIAlertController(title: "No Hearts", message: "You have no hearts left. Watch an ad or buy more!", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true)
     }
     
     
@@ -72,12 +93,38 @@ class SetupViewController: UIViewController {
             }
             
         case 1:
-            print("Erron level Button")
+            giftButton = sender
+            showPopUpButtonTapped()
         case 2:
-            print("Erron level Button")
+            print("something useful to test")
         default:
-            print("Erron level Button")
-
+            print("default")
+            
         }
+    }
+    
+    
+    @objc private func showPopUpButtonTapped() {
+        popUpView.frame.size = CGSize(width: 320, height: 110)
+        popUpView.center = view.center
+        
+        popUpView.center.y += 120
+        view.addSubview(popUpView)
+        
+        popUpView.transform = CGAffineTransform(scaleX: 0.8, y: 1.5)
+        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0) {
+            self.popUpView.transform = CGAffineTransform.identity
+        }
+        
+        giftButton?.isEnabled = false
+        giftButton?.layer.opacity = 0.5
+    }
+    
+    
+    @objc func closePopUp() {
+        popUpView.removeFromSuperview()
+        
+        giftButton?.isEnabled = true
+        giftButton?.layer.opacity = 1
     }
 }

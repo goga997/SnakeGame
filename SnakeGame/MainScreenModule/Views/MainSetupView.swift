@@ -10,8 +10,20 @@ import UIKit
 class MainSetupView: UIView {
     
     private var controlBoardButtonStack = UIStackView()
+    
     private var settingsButtonStackView = UIStackView()
     private let chooseBoardLabel = UILabel()
+    
+    var heartsLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 22, weight: .bold)
+        label.textColor = .black
+        label.text = "--" // temporarly value
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private let iconHeart = UIComponents.createHeartImageView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -19,10 +31,28 @@ class MainSetupView: UIView {
         configureControlBoardButtonStack()
         confchooseLabel()
         configureSettingsButtonStackView()
+        
+        configureHeartsLabel()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func configureHeartsLabel() {
+        
+        addSubview(heartsLabel)
+        addSubview(iconHeart)
+        
+        NSLayoutConstraint.activate([
+            heartsLabel.topAnchor.constraint(equalTo: settingsButtonStackView.topAnchor, constant: -50),
+            heartsLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            
+            iconHeart.topAnchor.constraint(equalTo: settingsButtonStackView.topAnchor, constant: -54),
+            iconHeart.leadingAnchor.constraint(equalTo: heartsLabel.trailingAnchor, constant: 4),
+            iconHeart.heightAnchor.constraint(equalToConstant: 32),
+            iconHeart.widthAnchor.constraint(equalToConstant: 32),
+        ])
     }
     
     private func confchooseLabel() {
@@ -68,10 +98,9 @@ class MainSetupView: UIView {
     private func configureSettingsButtonStackView() {
         let rulesButton = SettingButton(image: "grid")
         let giftButton = SettingButton(image: "gift")
-        let likeButton = SettingButton(image: "square.and.arrow.up")
-//        let gridButton = SettingButton(image: "grid")
+        let settingsButton = SettingButton(image: "gear")
         
-        settingsButtonStackView = UIStackView(arrangedSubviews: [rulesButton, giftButton, likeButton])
+        settingsButtonStackView = UIStackView(arrangedSubviews: [rulesButton, giftButton, settingsButton])
         
         settingsButtonStackView.arrangedSubviews.enumerated().forEach { $0.element.tag = $0.offset }
         settingsButtonStackView.axis = .horizontal
@@ -85,7 +114,7 @@ class MainSetupView: UIView {
             settingsButtonStackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -120),
             settingsButtonStackView.heightAnchor.constraint(equalToConstant: 50),
             settingsButtonStackView.widthAnchor.constraint(equalToConstant: 190),
-
+            
         ])
     }
     

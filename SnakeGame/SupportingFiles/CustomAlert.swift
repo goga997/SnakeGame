@@ -174,7 +174,6 @@ class CustomAlert {
         guard let targetView = mainView else { return }
         HapticsManager.shared.selectionVibrate()
         
-        
         UIView.animate(withDuration: 0.3) {
             self.alertView.frame = CGRect(x: 40,
                                           y: targetView.frame.height,

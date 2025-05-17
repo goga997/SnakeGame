@@ -7,12 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF17AA732D17096600FFEC46 /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF17AA722D17096600FFEC46 /* PopUpView.swift */; };
+		DF2C27812D61591100DA9DF4 /* HeartManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2C27802D61591100DA9DF4 /* HeartManager.swift */; };
+		DF2C27832D64EB5500DA9DF4 /* UIComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2C27822D64EB5500DA9DF4 /* UIComponents.swift */; };
 		DF4D6E1D2B3373D7003520C3 /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4D6E1C2B3373D7003520C3 /* HapticsManager.swift */; };
+		DF541B1E2D78DB7100E68252 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = DF541B1D2D78DB7100E68252 /* GoogleMobileAds */; };
+		DF541B212D78EC4C00E68252 /* AdsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF541B202D78EC4C00E68252 /* AdsManager.swift */; };
+		DF541B232D78FC7500E68252 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF541B222D78FC7500E68252 /* NetworkManager.swift */; };
 		DF87E0FF2B1F422400AA8678 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF87E0FE2B1F422400AA8678 /* AppDelegate.swift */; };
 		DF87E1012B1F422400AA8678 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF87E1002B1F422400AA8678 /* SceneDelegate.swift */; };
 		DF87E1032B1F422400AA8678 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF87E1022B1F422400AA8678 /* MainViewController.swift */; };
 		DF87E1082B1F422500AA8678 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF87E1072B1F422500AA8678 /* Assets.xcassets */; };
-		DF87E10B2B1F422500AA8678 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF87E1092B1F422500AA8678 /* LaunchScreen.storyboard */; };
 		DF87E1182B1F4CBF00AA8678 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF87E1172B1F4CBF00AA8678 /* BoardView.swift */; };
 		DF87E11A2B1F51DB00AA8678 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF87E1192B1F51DB00AA8678 /* GameModel.swift */; };
 		DF87E11C2B1F55F900AA8678 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF87E11B2B1F55F900AA8678 /* Resources.swift */; };
@@ -37,13 +42,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DF17AA722D17096600FFEC46 /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
+		DF2C27802D61591100DA9DF4 /* HeartManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartManager.swift; sourceTree = "<group>"; };
+		DF2C27822D64EB5500DA9DF4 /* UIComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIComponents.swift; sourceTree = "<group>"; };
 		DF4D6E1C2B3373D7003520C3 /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
+		DF541B202D78EC4C00E68252 /* AdsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsManager.swift; sourceTree = "<group>"; };
+		DF541B222D78FC7500E68252 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		DF87E0FB2B1F422400AA8678 /* SnakeGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnakeGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF87E0FE2B1F422400AA8678 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF87E1002B1F422400AA8678 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DF87E1022B1F422400AA8678 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		DF87E1072B1F422500AA8678 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		DF87E10A2B1F422500AA8678 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DF87E10C2B1F422500AA8678 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF87E1172B1F4CBF00AA8678 /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 		DF87E1192B1F51DB00AA8678 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
@@ -73,17 +82,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF541B1E2D78DB7100E68252 /* GoogleMobileAds in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DF2C27872D6F9D7500DA9DF4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DF541B1F2D78EC3600E68252 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				DF4D6E1C2B3373D7003520C3 /* HapticsManager.swift */,
+				DF2C27802D61591100DA9DF4 /* HeartManager.swift */,
+				DF541B202D78EC4C00E68252 /* AdsManager.swift */,
+				DF541B222D78FC7500E68252 /* NetworkManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		DF87E0F22B1F422400AA8678 = {
 			isa = PBXGroup;
 			children = (
 				DF87E0FD2B1F422400AA8678 /* SnakeGame */,
 				DF87E0FC2B1F422400AA8678 /* Products */,
+				DF2C27872D6F9D7500DA9DF4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,8 +128,9 @@
 			isa = PBXGroup;
 			children = (
 				DF87E1122B1F4BDA00AA8678 /* Application */,
-				DFB3017B2B2FC23B0072D9A7 /* MainModule */,
-				DFB3017C2B2FC25D0072D9A7 /* OptionsModule */,
+				DFB3017C2B2FC25D0072D9A7 /* MainScreenModule */,
+				DFB3017B2B2FC23B0072D9A7 /* BoardGameModule */,
+				DF541B1F2D78EC3600E68252 /* Services */,
 				DF87E1132B1F4BE600AA8678 /* SupportingFiles */,
 			);
 			path = SnakeGame;
@@ -120,7 +150,6 @@
 			children = (
 				DFD62B162B34907B00416EFC /* Fonts */,
 				DF87E1072B1F422500AA8678 /* Assets.xcassets */,
-				DF87E1092B1F422500AA8678 /* LaunchScreen.storyboard */,
 				DF87E10C2B1F422500AA8678 /* Info.plist */,
 				DFB301832B2FC4200072D9A7 /* ControlBoardButton.swift */,
 				DF87E11B2B1F55F900AA8678 /* Resources.swift */,
@@ -128,9 +157,10 @@
 				DFB3018D2B30DEEC0072D9A7 /* TryAgainButton.swift */,
 				DFB3018F2B30DF070072D9A7 /* UILabelExtension.swift */,
 				DFB301872B30D64A0072D9A7 /* ControlButton.swift */,
-				DF4D6E1C2B3373D7003520C3 /* HapticsManager.swift */,
 				DFD62B192B34954300416EFC /* UIFont + Extension.swift */,
 				DFB54D1B2B3762E10010678F /* SettingButton.swift */,
+				DF17AA722D17096600FFEC46 /* PopUpView.swift */,
+				DF2C27822D64EB5500DA9DF4 /* UIComponents.swift */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -175,23 +205,23 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		DFB3017B2B2FC23B0072D9A7 /* MainModule */ = {
+		DFB3017B2B2FC23B0072D9A7 /* BoardGameModule */ = {
 			isa = PBXGroup;
 			children = (
 				DF87E1152B1F4C8400AA8678 /* Controllers */,
 				DF87E1162B1F4C8D00AA8678 /* Views */,
 				DF87E1142B1F4C7D00AA8678 /* Models */,
 			);
-			path = MainModule;
+			path = BoardGameModule;
 			sourceTree = "<group>";
 		};
-		DFB3017C2B2FC25D0072D9A7 /* OptionsModule */ = {
+		DFB3017C2B2FC25D0072D9A7 /* MainScreenModule */ = {
 			isa = PBXGroup;
 			children = (
 				DFB3017E2B2FC2BE0072D9A7 /* Views */,
 				DFB3017D2B2FC2A10072D9A7 /* Controllers */,
 			);
-			path = OptionsModule;
+			path = MainScreenModule;
 			sourceTree = "<group>";
 		};
 		DFB3017D2B2FC2A10072D9A7 /* Controllers */ = {
@@ -234,6 +264,9 @@
 			dependencies = (
 			);
 			name = SnakeGame;
+			packageProductDependencies = (
+				DF541B1D2D78DB7100E68252 /* GoogleMobileAds */,
+			);
 			productName = SnakeGame;
 			productReference = DF87E0FB2B1F422400AA8678 /* SnakeGame.app */;
 			productType = "com.apple.product-type.application";
@@ -262,6 +295,9 @@
 				Base,
 			);
 			mainGroup = DF87E0F22B1F422400AA8678;
+			packageReferences = (
+				DF541B1C2D78DB7100E68252 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+			);
 			productRefGroup = DF87E0FC2B1F422400AA8678 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -277,7 +313,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFD62B182B3491DC00416EFC /* FingerPaint-Regular.ttf in Resources */,
-				DF87E10B2B1F422500AA8678 /* LaunchScreen.storyboard in Resources */,
 				DF87E1082B1F422500AA8678 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -303,9 +338,14 @@
 				DFB301802B2FC2ED0072D9A7 /* SetupViewController.swift in Sources */,
 				DF87E1032B1F422400AA8678 /* MainViewController.swift in Sources */,
 				DF87E1182B1F4CBF00AA8678 /* BoardView.swift in Sources */,
+				DF541B232D78FC7500E68252 /* NetworkManager.swift in Sources */,
+				DF541B212D78EC4C00E68252 /* AdsManager.swift in Sources */,
+				DF2C27812D61591100DA9DF4 /* HeartManager.swift in Sources */,
 				DFB301882B30D64A0072D9A7 /* ControlButton.swift in Sources */,
+				DF17AA732D17096600FFEC46 /* PopUpView.swift in Sources */,
 				DF87E11C2B1F55F900AA8678 /* Resources.swift in Sources */,
 				DF87E1222B2740B000AA8678 /* Snake.swift in Sources */,
+				DF2C27832D64EB5500DA9DF4 /* UIComponents.swift in Sources */,
 				DF87E0FF2B1F422400AA8678 /* AppDelegate.swift in Sources */,
 				DF87E1202B1F979600AA8678 /* MovingDirectionModel.swift in Sources */,
 				DFB301752B2F82DD0072D9A7 /* GameTimer.swift in Sources */,
@@ -317,17 +357,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		DF87E1092B1F422500AA8678 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DF87E10A2B1F422500AA8678 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		DF87E10D2B1F422500AA8678 /* Debug */ = {
@@ -533,6 +562,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DF541B1C2D78DB7100E68252 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DF541B1D2D78DB7100E68252 /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DF541B1C2D78DB7100E68252 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DF87E0F32B1F422400AA8678 /* Project object */;
 }
