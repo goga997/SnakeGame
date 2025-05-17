@@ -25,7 +25,7 @@ class TryAgainButton: UIButton {
     }
     
     private func configure() {
-        backgroundColor = #colorLiteral(red: 0.631372549, green: 0.7647058824, blue: 0.6745098039, alpha: 1)
+        backgroundColor = #colorLiteral(red: 0.5465492606, green: 0.7540510297, blue: 0.5525836349, alpha: 1)
         titleLabel?.font = .fingerPaintFont22()
         tintColor = .white
         layer.cornerRadius = 10

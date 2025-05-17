@@ -44,19 +44,9 @@ class MainView: UIView {
     let nextLevelNumberLabel = UILabel()
     let toNextLevelLabel = UILabel(text: "Points remained to next Level !!")
     
-    private let fadingLabel: UILabel = {
-        let fadingLabel = UILabel()
-        fadingLabel.text = "Speed Increased"
-        fadingLabel.isHidden = true
-        fadingLabel.textColor = .black
-        fadingLabel.font = .fingerPaintFont22()
-        fadingLabel.translatesAutoresizingMaskIntoConstraints = false
-        return fadingLabel
-    }()
-    
     private let hourglassImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(systemName: "hourglass")
+        imageView.image = UIImage(systemName: "hourglass.badge.plus")
         imageView.contentMode = .scaleAspectFit
         imageView.isHidden = true
         imageView.tintColor = .black
@@ -145,12 +135,8 @@ class MainView: UIView {
     }
     
     private func configFadingLabelAndHourglass() {
-        addSubview(fadingLabel)
         boardView.addSubview(hourglassImageView)
         NSLayoutConstraint.activate([
-            fadingLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-            fadingLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-            
             hourglassImageView.centerYAnchor.constraint(equalTo: boardView.centerYAnchor),
             hourglassImageView.centerXAnchor.constraint(equalTo: boardView.centerXAnchor),
             hourglassImageView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.16),
@@ -259,17 +245,11 @@ class MainView: UIView {
     }
     
     func fadeMessage(finalAlpha: CGFloat) {
-        fadingLabel.alpha         = 1.0
-        fadingLabel.isHidden      = false
-        fadingLabel.textAlignment = .center
-        fadingLabel.layer.masksToBounds = true
-        
         hourglassImageView.alpha = 1.0
         hourglassImageView.isHidden = false
         hourglassImageView.layer.masksToBounds = true
         
-        UIView.animate(withDuration: 3.0, animations: { () -> Void in
-            self.fadingLabel.alpha = finalAlpha
+        UIView.animate(withDuration: 2.0, animations: { () -> Void in
             self.hourglassImageView.alpha = finalAlpha
         })
     }

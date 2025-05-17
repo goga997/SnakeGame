@@ -27,10 +27,17 @@ class SetupViewController: UIViewController {
         configureBackImage()
         HeartManager.checkResetIfNeeded() //call it only once per loading app
         mainSetUpView?.heartsLabel.text = "\(HeartManager.hearts)"
+        
+        //NOTIFICATIONS
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(updateHeartsLabel),
                                                name: HeartManager.heartsUpdatedNotification,
                                                object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(showPopUpButtonTapped),
+                                               name: Notification.Name("showAdPopUpAfterDismiss"),
+                                               object: nil)
+
     }
 
     

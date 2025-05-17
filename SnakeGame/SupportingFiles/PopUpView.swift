@@ -64,7 +64,7 @@ class PopUpView: UIView {
         button.isEnabled = false
         button.alpha = 0.5
         
-        // Generarea imaginii cu textul "Ad"
+        // Generate image with text "Ad"
         let iconSize = CGSize(width: 24, height: 18)
         let iconImage = createIconWithText(
             text: "Ad",
@@ -116,7 +116,7 @@ class PopUpView: UIView {
         AdsManager.shared.delegate = self
         AdsManager.shared.loadAd()
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.viewAdButton.isEnabled = true
             self.viewAdButton.alpha = 1.0
         }
@@ -210,8 +210,8 @@ class PopUpView: UIView {
     
     @objc private func viewAdButtonTapped() {
         AdsManager.shared.showAd()
-        print("add ok shown ")
     }
+    
 }
 
 // MARK: - GADFullScreenContentDelegate

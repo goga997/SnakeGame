@@ -23,8 +23,8 @@ struct HeartManager {
     }
 
     static func resetHearts() {
-        if hearts < 5 { // do not reset if there are already 5+
-            hearts = 5
+        if hearts < 3 { // do not reset if there are already 3+
+            hearts = 3
             UserDefaults.standard.set(Date(), forKey: lastResetKey)
         }
     }
@@ -50,8 +50,8 @@ struct HeartManager {
             return
         }
 
-        if hearts < 5 {
-            hearts = 5
+        if hearts < 3 {
+            hearts = 3
         }
         UserDefaults.standard.set(today, forKey: lastResetKey)
     }

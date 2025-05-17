@@ -18,7 +18,7 @@ class MainSetupView: UIView {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 22, weight: .bold)
         label.textColor = .black
-        label.text = "--" // temporarly value
+        label.text = "--" // valoare temporară
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()

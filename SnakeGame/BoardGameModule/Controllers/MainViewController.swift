@@ -15,7 +15,7 @@ class MainViewController: UIViewController {
     private var mainView: MainView {
         view as! MainView
     }
-    
+        
     //MARK: - LIFE CYCLE 
     override func loadView() {
         self.view = MainView(gameDetails: gameDetails)
@@ -70,12 +70,11 @@ class MainViewController: UIViewController {
         }
     }
 
-//Play Button + Pause Button
-    @objc func playButtonTapped() {
-        
+    @objc func playButtonTapped() {   //Play Button + Pause Button
         if gameModel == nil || gameModel?.isGameOver == true {
             guard HeartManager.hearts > 0 else {
                     print("no more hearts")
+                    showNoHeartsAlert()
                     return
                 }
                 HeartManager.hearts -= 1
@@ -115,6 +114,27 @@ class MainViewController: UIViewController {
         gameModel?.isGameOver = true
 
     }
+    
+    private func showNoHeartsAlert() {
+        let alert = UIAlertController(
+            title: "No More Hearts",
+            message: "You don't have enough hearts to continue playing.\nPlease try again later or you can gain hearts watching ads.",
+            preferredStyle: .alert
+        )
+        
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+            //send a notification to the SetUpVC in order to open custom pop-up view for ads watching
+            self.dismiss(animated: true)
+            //wait a bit and then send notification
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+                NotificationCenter.default.post(name: Notification.Name("showAdPopUpAfterDismiss"), object: nil)
+            }
+        }
+        
+        alert.addAction(okAction)
+        present(alert, animated: true)
+    }
+
 }
 
 //BoardViewProtocol

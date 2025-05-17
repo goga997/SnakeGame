@@ -26,6 +26,10 @@ extension UIFont {
         return UIFont.init(name: "FingerPaint-Regular", size: 22)
     }
     
+    static func fingerPaintFont26() -> UIFont? {
+        return UIFont.init(name: "FingerPaint-Regular", size: 26)
+    }
+    
     static func fingerPaintFont28() -> UIFont? {
         return UIFont.init(name: "FingerPaint-Regular", size: 28)
     }
