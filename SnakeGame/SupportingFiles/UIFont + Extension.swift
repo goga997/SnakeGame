@@ -9,7 +9,6 @@ import UIKit
 
 extension UIFont {
     
-    
     static func fingerPaintFont14() -> UIFont? {
         return UIFont.init(name: "FingerPaint-Regular", size: 14)
     }
@@ -20,6 +19,10 @@ extension UIFont {
     
     static func fingerPaintFont18() -> UIFont? {
         return UIFont.init(name: "FingerPaint-Regular", size: 18)
+    }
+    
+    static func fingerPaintFont20() -> UIFont? {
+        return UIFont.init(name: "FingerPaint-Regular", size: 20)
     }
     
     static func fingerPaintFont22() -> UIFont? {

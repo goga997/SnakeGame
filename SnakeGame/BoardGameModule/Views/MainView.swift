@@ -35,6 +35,7 @@ class MainView: UIView {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "yourScore")
         imageView.contentMode = .scaleAspectFit
+        imageView.alpha = 0.8
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()

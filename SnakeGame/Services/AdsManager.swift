@@ -56,6 +56,8 @@ class AdsManager {
     }
     
     func showAd() {
+        HapticsManager.shared.selectionVibrate()
+        
         //first verify if is there any internet connection
         if !NetworkManager.shared.isConnected {
             DispatchQueue.main.async {

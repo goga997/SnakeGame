@@ -37,6 +37,9 @@
 		DFB3018E2B30DEEC0072D9A7 /* TryAgainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB3018D2B30DEEC0072D9A7 /* TryAgainButton.swift */; };
 		DFB301902B30DF070072D9A7 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB3018F2B30DF070072D9A7 /* UILabelExtension.swift */; };
 		DFB54D1C2B3762E10010678F /* SettingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB54D1B2B3762E10010678F /* SettingButton.swift */; };
+		DFD0475D2DD9D5A0009093E4 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD0475C2DD9D5A0009093E4 /* SettingsViewController.swift */; };
+		DFD0475F2DDB9AA0009093E4 /* UIColor + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD0475E2DDB9AA0009093E4 /* UIColor + Extension.swift */; };
+		DFD047612DDBA339009093E4 /* PremiumBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD047602DDBA339009093E4 /* PremiumBannerView.swift */; };
 		DFD62B182B3491DC00416EFC /* FingerPaint-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DFD62B172B3491DC00416EFC /* FingerPaint-Regular.ttf */; };
 		DFD62B1A2B34954300416EFC /* UIFont + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD62B192B34954300416EFC /* UIFont + Extension.swift */; };
 /* End PBXBuildFile section */
@@ -73,6 +76,9 @@
 		DFB3018D2B30DEEC0072D9A7 /* TryAgainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryAgainButton.swift; sourceTree = "<group>"; };
 		DFB3018F2B30DF070072D9A7 /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
 		DFB54D1B2B3762E10010678F /* SettingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingButton.swift; sourceTree = "<group>"; };
+		DFD0475C2DD9D5A0009093E4 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		DFD0475E2DDB9AA0009093E4 /* UIColor + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extension.swift"; sourceTree = "<group>"; };
+		DFD047602DDBA339009093E4 /* PremiumBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumBannerView.swift; sourceTree = "<group>"; };
 		DFD62B172B3491DC00416EFC /* FingerPaint-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FingerPaint-Regular.ttf"; sourceTree = "<group>"; };
 		DFD62B192B34954300416EFC /* UIFont + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -130,6 +136,7 @@
 				DF87E1122B1F4BDA00AA8678 /* Application */,
 				DFB3017C2B2FC25D0072D9A7 /* MainScreenModule */,
 				DFB3017B2B2FC23B0072D9A7 /* BoardGameModule */,
+				DFD047592DD9D569009093E4 /* SettingsModule */,
 				DF541B1F2D78EC3600E68252 /* Services */,
 				DF87E1132B1F4BE600AA8678 /* SupportingFiles */,
 			);
@@ -161,6 +168,7 @@
 				DFB54D1B2B3762E10010678F /* SettingButton.swift */,
 				DF17AA722D17096600FFEC46 /* PopUpView.swift */,
 				DF2C27822D64EB5500DA9DF4 /* UIComponents.swift */,
+				DFD0475E2DDB9AA0009093E4 /* UIColor + Extension.swift */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -236,6 +244,31 @@
 			isa = PBXGroup;
 			children = (
 				DFB301812B2FC3130072D9A7 /* MainSetupView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DFD047592DD9D569009093E4 /* SettingsModule */ = {
+			isa = PBXGroup;
+			children = (
+				DFD0475B2DD9D589009093E4 /* Views */,
+				DFD0475A2DD9D580009093E4 /* Controllers */,
+			);
+			path = SettingsModule;
+			sourceTree = "<group>";
+		};
+		DFD0475A2DD9D580009093E4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DFD0475C2DD9D5A0009093E4 /* SettingsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DFD0475B2DD9D589009093E4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DFD047602DDBA339009093E4 /* PremiumBannerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -326,6 +359,7 @@
 			files = (
 				DFB301862B2FD2B30072D9A7 /* Score.swift in Sources */,
 				DFB301772B2F8CD40072D9A7 /* GameDetails.swift in Sources */,
+				DFD047612DDBA339009093E4 /* PremiumBannerView.swift in Sources */,
 				DF87E1242B2748EA00AA8678 /* AddPoint.swift in Sources */,
 				DFB301732B2F6B840072D9A7 /* MainView.swift in Sources */,
 				DF4D6E1D2B3373D7003520C3 /* HapticsManager.swift in Sources */,
@@ -343,10 +377,12 @@
 				DF2C27812D61591100DA9DF4 /* HeartManager.swift in Sources */,
 				DFB301882B30D64A0072D9A7 /* ControlButton.swift in Sources */,
 				DF17AA732D17096600FFEC46 /* PopUpView.swift in Sources */,
+				DFD0475F2DDB9AA0009093E4 /* UIColor + Extension.swift in Sources */,
 				DF87E11C2B1F55F900AA8678 /* Resources.swift in Sources */,
 				DF87E1222B2740B000AA8678 /* Snake.swift in Sources */,
 				DF2C27832D64EB5500DA9DF4 /* UIComponents.swift in Sources */,
 				DF87E0FF2B1F422400AA8678 /* AppDelegate.swift in Sources */,
+				DFD0475D2DD9D5A0009093E4 /* SettingsViewController.swift in Sources */,
 				DF87E1202B1F979600AA8678 /* MovingDirectionModel.swift in Sources */,
 				DFB301752B2F82DD0072D9A7 /* GameTimer.swift in Sources */,
 				DF87E11E2B1F5AA800AA8678 /* GameCell.swift in Sources */,

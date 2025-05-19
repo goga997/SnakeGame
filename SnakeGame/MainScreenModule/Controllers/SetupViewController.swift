@@ -103,7 +103,11 @@ class SetupViewController: UIViewController {
             giftButton = sender
             showPopUpButtonTapped()
         case 2:
-            print("something useful to test")
+            let settingsVC = SettingsViewController()
+            let settingsNavController = UINavigationController(rootViewController: settingsVC)
+            settingsNavController.modalPresentationStyle = .fullScreen
+            settingsNavController.modalTransitionStyle = .coverVertical
+            present(settingsNavController, animated: true)
         default:
             print("default")
             
