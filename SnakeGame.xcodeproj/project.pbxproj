@@ -40,6 +40,8 @@
 		DFD0475D2DD9D5A0009093E4 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD0475C2DD9D5A0009093E4 /* SettingsViewController.swift */; };
 		DFD0475F2DDB9AA0009093E4 /* UIColor + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD0475E2DDB9AA0009093E4 /* UIColor + Extension.swift */; };
 		DFD047612DDBA339009093E4 /* PremiumBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD047602DDBA339009093E4 /* PremiumBannerView.swift */; };
+		DFD047632DDE1E51009093E4 /* SettingsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD047622DDE1E51009093E4 /* SettingsTableView.swift */; };
+		DFD047672DDE2573009093E4 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD047662DDE2573009093E4 /* SettingsCell.swift */; };
 		DFD62B182B3491DC00416EFC /* FingerPaint-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DFD62B172B3491DC00416EFC /* FingerPaint-Regular.ttf */; };
 		DFD62B1A2B34954300416EFC /* UIFont + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD62B192B34954300416EFC /* UIFont + Extension.swift */; };
 /* End PBXBuildFile section */
@@ -79,6 +81,8 @@
 		DFD0475C2DD9D5A0009093E4 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		DFD0475E2DDB9AA0009093E4 /* UIColor + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extension.swift"; sourceTree = "<group>"; };
 		DFD047602DDBA339009093E4 /* PremiumBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumBannerView.swift; sourceTree = "<group>"; };
+		DFD047622DDE1E51009093E4 /* SettingsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableView.swift; sourceTree = "<group>"; };
+		DFD047662DDE2573009093E4 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		DFD62B172B3491DC00416EFC /* FingerPaint-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FingerPaint-Regular.ttf"; sourceTree = "<group>"; };
 		DFD62B192B34954300416EFC /* UIFont + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -269,6 +273,8 @@
 			isa = PBXGroup;
 			children = (
 				DFD047602DDBA339009093E4 /* PremiumBannerView.swift */,
+				DFD047622DDE1E51009093E4 /* SettingsTableView.swift */,
+				DFD047662DDE2573009093E4 /* SettingsCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -377,8 +383,10 @@
 				DF2C27812D61591100DA9DF4 /* HeartManager.swift in Sources */,
 				DFB301882B30D64A0072D9A7 /* ControlButton.swift in Sources */,
 				DF17AA732D17096600FFEC46 /* PopUpView.swift in Sources */,
+				DFD047672DDE2573009093E4 /* SettingsCell.swift in Sources */,
 				DFD0475F2DDB9AA0009093E4 /* UIColor + Extension.swift in Sources */,
 				DF87E11C2B1F55F900AA8678 /* Resources.swift in Sources */,
+				DFD047632DDE1E51009093E4 /* SettingsTableView.swift in Sources */,
 				DF87E1222B2740B000AA8678 /* Snake.swift in Sources */,
 				DF2C27832D64EB5500DA9DF4 /* UIComponents.swift in Sources */,
 				DF87E0FF2B1F422400AA8678 /* AppDelegate.swift in Sources */,

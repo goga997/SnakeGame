@@ -12,7 +12,7 @@ class SettingsViewController: UIViewController {
     private var titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.fingerPaintFont26()
-        label.textColor = #colorLiteral(red: 0.2605186105, green: 0.2605186105, blue: 0.2605186105, alpha: 1)
+        label.textColor = #colorLiteral(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)
         label.text = "Settings"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -28,13 +28,14 @@ class SettingsViewController: UIViewController {
     
     private let premiumBannerView = PremiumBannerView()
     
-    let viewTest = UIView()
+    private let settingsTableView = SettingsTableView()
+    
     
     //VIEW DID LOAD
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = true
-
+        
         applyLaunchGradient(to: view)
         setUpView()
         setConstraints()
@@ -48,10 +49,10 @@ class SettingsViewController: UIViewController {
         premiumBannerView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(premiumBannerView)
         
-        viewTest.backgroundColor = #colorLiteral(red: 0.9803921569, green: 0.9764705882, blue: 0.9647058824, alpha: 1)
-        viewTest.layer.cornerRadius = 20
-        viewTest.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(viewTest)
+        view.addSubview(settingsTableView)
+        settingsTableView.translatesAutoresizingMaskIntoConstraints = false
+        settingsTableView.layer.cornerRadius = 20
+        settingsTableView.clipsToBounds = true
     }
     
     @objc private func closeTapped() {
@@ -63,24 +64,23 @@ class SettingsViewController: UIViewController {
 extension SettingsViewController {
     private func setConstraints() {
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8),
+            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
             closeButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
             closeButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            closeButton.widthAnchor.constraint(equalToConstant: 28),
-            closeButton.heightAnchor.constraint(equalToConstant: 28),
+            closeButton.widthAnchor.constraint(equalToConstant: 32),
+            closeButton.heightAnchor.constraint(equalToConstant: 32),
             
             premiumBannerView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20),
             premiumBannerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             premiumBannerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             premiumBannerView.heightAnchor.constraint(equalToConstant: 72),
             
-            viewTest.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 100),
-            viewTest.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            viewTest.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            viewTest.heightAnchor.constraint(equalToConstant: 107),
-            
+            settingsTableView.topAnchor.constraint(equalTo: premiumBannerView.bottomAnchor, constant: 20),
+            settingsTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            settingsTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            settingsTableView.heightAnchor.constraint(equalToConstant: 300)
         ])
     }
 }
