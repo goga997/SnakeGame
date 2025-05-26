@@ -1,22 +1,21 @@
 //
-//  SettingsTableView.swift
+//  AppPoliciesTableView.swift
 //  SnakeGame
 //
-//  Created by Grigore on 21.05.2025.
+//  Created by Grigore on 26.05.2025.
 //
 
 import UIKit
 
-protocol SettingsTableViewDelegate: AnyObject {
-    func didSelectSettingsItem(_ item: SettingsItem)
+protocol AppPoliciesTableViewDelegate: AnyObject {
+    func didSelectAppPoliciesItem(_ item: AppPoliciesItem)
 }
 
-class SettingsTableView: UITableView {
+class AppPoliciesTableView: UITableView {
     
+    weak var appPoliciesDelegate: AppPoliciesTableViewDelegate?
     
-    weak var settingsDelegate: SettingsTableViewDelegate?
-    
-    private let items = SettingsItem.allCases
+    private let items = AppPoliciesItem.allCases
     
     init() {
         super.init(frame: .zero, style: .plain)
@@ -35,14 +34,14 @@ class SettingsTableView: UITableView {
         showsVerticalScrollIndicator = false
         isScrollEnabled = false
         
-        separatorInset = UIEdgeInsets(top: 0, left: 12, bottom: 0, right: 12)
+        separatorInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
 
         register(SettingsCell.self, forCellReuseIdentifier: SettingsCell.reuseID)
     }
     
 }
 
-extension SettingsTableView: UITableViewDataSource, UITableViewDelegate {
+extension AppPoliciesTableView: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
@@ -54,7 +53,6 @@ extension SettingsTableView: UITableViewDataSource, UITableViewDelegate {
         let item = items[indexPath.row]
         cell.configure(with: item.title, icon: item.icon)
         cell.backgroundColor = .clear
-        
         return cell
     }
     
@@ -69,6 +67,6 @@ extension SettingsTableView: UITableViewDataSource, UITableViewDelegate {
         
         // Notify VC via delegate or closure if needed
         let item = items[indexPath.row]
-        settingsDelegate?.didSelectSettingsItem(item)
+        appPoliciesDelegate?.didSelectAppPoliciesItem(item)
     }
 }

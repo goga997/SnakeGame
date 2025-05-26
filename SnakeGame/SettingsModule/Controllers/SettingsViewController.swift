@@ -9,6 +9,9 @@ import UIKit
 
 class SettingsViewController: UIViewController {
     
+    private let scrollView = UIScrollView()
+    private let contentView = UIView()
+    
     private var titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.fingerPaintFont26()
@@ -27,8 +30,24 @@ class SettingsViewController: UIViewController {
     }()
     
     private let premiumBannerView = PremiumBannerView()
-    
     private let settingsTableView = SettingsTableView()
+    
+    private let notificationsToggle = LabeledSwitchView(
+        title: "Notifications",
+        isOn: true
+    ) { isOn in
+        print("Notifications switched to \(isOn)")
+    }
+    
+    private let hapticToggle = LabeledSwitchView(
+        title: "Haptic",
+        isOn: UserDefaults.standard.bool(forKey: "hapticsEnabled") //read saved state
+    ) { isOn in
+        print("Haptic switched to \(isOn)")
+        UserDefaults.standard.set(isOn, forKey: "hapticsEnabled") //save new state
+    }
+    
+    private let appPoliciesTableView = AppPoliciesTableView()
     
     
     //VIEW DID LOAD
@@ -42,45 +61,130 @@ class SettingsViewController: UIViewController {
     }
     
     private func setUpView() {
+    
+        view.addSubview(scrollView)
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.addSubview(contentView)
+        contentView.translatesAutoresizingMaskIntoConstraints = false
         
-        view .addSubview(titleLabel)
-        view.addSubview(closeButton)
+        contentView.addSubview(titleLabel)
+        contentView.addSubview(closeButton)
         
         premiumBannerView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(premiumBannerView)
+        contentView.addSubview(premiumBannerView)
         
-        view.addSubview(settingsTableView)
+        settingsTableView.settingsDelegate = self
         settingsTableView.translatesAutoresizingMaskIntoConstraints = false
         settingsTableView.layer.cornerRadius = 20
         settingsTableView.clipsToBounds = true
+        contentView.addSubview(settingsTableView)
+        
+        notificationsToggle.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(notificationsToggle)
+        
+        hapticToggle.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(hapticToggle)
+        
+        appPoliciesTableView.appPoliciesDelegate = self
+        appPoliciesTableView.translatesAutoresizingMaskIntoConstraints = false
+        appPoliciesTableView.layer.cornerRadius = 20
+        appPoliciesTableView.clipsToBounds = true
+        contentView.addSubview(appPoliciesTableView)
     }
     
     @objc private func closeTapped() {
+        HapticsManager.shared.impactFeedback(for: .soft)
         dismiss(animated: true)
     }
 }
+
+
+//Delegate for settingsItem
+extension SettingsViewController: SettingsTableViewDelegate {
+    func didSelectSettingsItem(_ item: SettingsItem) {
+        switch item {
+        case .language:
+            print("language")
+        case .buyHearts:
+            print("Tapped: Buy Hearts")
+        case .resetOnboarding:
+            print("Tapped: Reset Onboarding")
+        case .followOnSocials:
+            print("Tapped: Follow on Socials")
+        case .appStoreReview:
+            print("Tapped: AppStore Review")
+        }
+    }
+}
+
+//Delegate for AppPoliciesItem
+extension SettingsViewController: AppPoliciesTableViewDelegate {
+    func didSelectAppPoliciesItem(_ item: AppPoliciesItem) {
+        switch item {
+        case .termsOfUse:
+            print("terms use")
+        case .privacy:
+            print("privacy")
+        case .legalNotice:
+            print("legal notice")
+        }
+    }
+}
+
 
 // For UI implementation
 extension SettingsViewController {
     private func setConstraints() {
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            scrollView.topAnchor.constraint(equalTo: view.topAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             
-            closeButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
-            closeButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            //  contentView fill scrollView and has the same width
+            contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+            
+            // Title + Close btn
+            titleLabel.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor),
+            titleLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            
+            closeButton.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor, constant: 4),
+            closeButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             closeButton.widthAnchor.constraint(equalToConstant: 32),
             closeButton.heightAnchor.constraint(equalToConstant: 32),
             
-            premiumBannerView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20),
-            premiumBannerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            premiumBannerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            premiumBannerView.heightAnchor.constraint(equalToConstant: 72),
+            //  Premium Banner
+            premiumBannerView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16),
+            premiumBannerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            premiumBannerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            premiumBannerView.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.09), // flexible
             
-            settingsTableView.topAnchor.constraint(equalTo: premiumBannerView.bottomAnchor, constant: 20),
-            settingsTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            settingsTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            settingsTableView.heightAnchor.constraint(equalToConstant: 300)
+            //  Settings Table
+            settingsTableView.topAnchor.constraint(equalTo: premiumBannerView.bottomAnchor, constant: 16),
+            settingsTableView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            settingsTableView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            settingsTableView.heightAnchor.constraint(equalToConstant: 249),
+            
+            //  Notifications Toggle
+            notificationsToggle.topAnchor.constraint(equalTo: settingsTableView.bottomAnchor, constant: 16),
+            notificationsToggle.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            notificationsToggle.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            
+            //  Haptic Toggle
+            hapticToggle.topAnchor.constraint(equalTo: notificationsToggle.bottomAnchor, constant: 16),
+            hapticToggle.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            hapticToggle.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            
+            //  App Policies Table
+            appPoliciesTableView.topAnchor.constraint(equalTo: hapticToggle.bottomAnchor, constant: 16),
+            appPoliciesTableView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            appPoliciesTableView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            appPoliciesTableView.heightAnchor.constraint(equalToConstant: 149),
         ])
     }
+
 }

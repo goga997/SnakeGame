@@ -49,15 +49,10 @@ class PremiumBannerView: UIView {
     
     private func applyGradientBackgroundForSettView() {
         let gradientLayer = CAGradientLayer()
-        
-//        gradientLayer.colors = [
-//            UIColor(hex: "#FCE38A").cgColor, // galben deschis
-//            UIColor(hex: "#F38181").cgColor  // galben/apus puțin mai închis
-//        ]
-        
+                
         gradientLayer.colors = [
-            UIColor(hex: "#A0E6F5").cgColor, // galben deschis
-            UIColor(hex: "#31AFC7").cgColor  // galben/apus puțin mai închis
+            UIColor(hex: "#A0E6F5").cgColor,
+            UIColor(hex: "#31AFC7").cgColor
         ]
         
         gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.0)

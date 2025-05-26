@@ -98,7 +98,6 @@ class SetupViewController: UIViewController {
                 SnakeColor.grid = UIColor.clear
                 sender.setImage(UIImage(systemName: "minus"), for: .normal)
             }
-            
         case 1:
             giftButton = sender
             showPopUpButtonTapped()
@@ -107,10 +106,10 @@ class SetupViewController: UIViewController {
             let settingsNavController = UINavigationController(rootViewController: settingsVC)
             settingsNavController.modalPresentationStyle = .fullScreen
             settingsNavController.modalTransitionStyle = .coverVertical
+            HapticsManager.shared.impactFeedback(for: .soft)
             present(settingsNavController, animated: true)
         default:
             print("default")
-            
         }
     }
     
