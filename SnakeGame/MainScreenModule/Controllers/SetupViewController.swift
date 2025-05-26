@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class SetupViewController: UIViewController {
     
@@ -28,7 +29,6 @@ class SetupViewController: UIViewController {
         HeartManager.checkResetIfNeeded() //call it only once per loading app
         mainSetUpView?.heartsLabel.text = "\(HeartManager.hearts)"
         
-        //NOTIFICATIONS
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(updateHeartsLabel),
                                                name: HeartManager.heartsUpdatedNotification,
@@ -37,7 +37,25 @@ class SetupViewController: UIViewController {
                                                selector: #selector(showPopUpButtonTapped),
                                                name: Notification.Name("showAdPopUpAfterDismiss"),
                                                object: nil)
+        
+        // Notification Permission Request (once)
+        NotificationManager.shared.requestAuthorizationIfNeeded { granted in
 
+            let alreadySet = UserDefaults.standard.object(forKey: "notificationsEnabled") != nil
+
+            // Dacă utilizatorul NU a setat deja toggle-ul în Settings, salvăm valoarea implicită în funcție de permisiunea acordată.
+            if !alreadySet {
+                UserDefaults.standard.set(granted, forKey: "notificationsEnabled")
+            }
+
+            // Planificăm notificările doar dacă avem permisiune și toggle-ul este ON
+            if granted && UserDefaults.standard.bool(forKey: "notificationsEnabled") {
+                NotificationManager.shared.scheduleThreeDailyPremiumReminders()
+                NotificationManager.shared.sendHeartsRestoredNotification()
+            }
+        }
+
+        
     }
 
     

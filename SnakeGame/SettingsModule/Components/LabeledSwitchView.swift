@@ -40,6 +40,10 @@ class LabeledSwitchView: UIView {
         onToggle?(sender.isOn)
     }
     
+    func setSwitchState(isOn: Bool) {
+        toggleSwitch.setOn(isOn, animated: false)
+    }
+    
     private func setupLayout() {
         addSubview(titleLable)
         addSubview(toggleSwitch)

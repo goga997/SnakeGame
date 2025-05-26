@@ -32,12 +32,30 @@ class SettingsViewController: UIViewController {
     private let premiumBannerView = PremiumBannerView()
     private let settingsTableView = SettingsTableView()
     
-    private let notificationsToggle = LabeledSwitchView(
-        title: "Notifications",
-        isOn: true
-    ) { isOn in
-        print("Notifications switched to \(isOn)")
-    }
+    private lazy var notificationsToggle: LabeledSwitchView = {
+        let savedState = UserDefaults.standard.bool(forKey: "notificationsEnabled")
+        let toggle = LabeledSwitchView(title: "Notifications", isOn: savedState) { isOn in
+            if isOn {
+                NotificationManager.shared.isAuthorized { authorized in
+                    DispatchQueue.main.async {
+                        if authorized {
+                            UserDefaults.standard.set(true, forKey: "notificationsEnabled")
+                            NotificationManager.shared.scheduleThreeDailyPremiumReminders()
+                            NotificationManager.shared.sendHeartsRestoredNotification()
+                        } else {
+                            self.notificationsToggle.setSwitchState(isOn: false)
+                            UserDefaults.standard.set(false, forKey: "notificationsEnabled")
+                            self.showPermissionAlert()
+                        }
+                    }
+                }
+            } else {
+                UserDefaults.standard.set(false, forKey: "notificationsEnabled")
+                NotificationManager.shared.cancelAllNotifications()
+            }
+        }
+        return toggle
+    }()
     
     private let hapticToggle = LabeledSwitchView(
         title: "Haptic",
@@ -58,10 +76,39 @@ class SettingsViewController: UIViewController {
         applyLaunchGradient(to: view)
         setUpView()
         setConstraints()
+        
+        NotificationManager.shared.isAuthorized { [weak self] authorized in
+            DispatchQueue.main.async {
+                if !authorized {
+                    self?.notificationsToggle.setSwitchState(isOn: false)
+                }
+            }
+        }
+
     }
     
-    private func setUpView() {
+    private func isNotificationToggleEnabled() -> Bool {
+        let granted = UserDefaults.standard.bool(forKey: "notificationsEnabled")
+        return granted
+    }
+
+    private func showPermissionAlert() {
+        let alert = UIAlertController(
+            title: "Enable Notifications",
+            message: "To receive reminders and alerts, please enable notifications in Settings.",
+            preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        alert.addAction(UIAlertAction(title: "Open Settings", style: .default, handler: { _ in
+            if let appSettings = URL(string: UIApplication.openSettingsURLString) {
+                UIApplication.shared.open(appSettings)
+            }
+        }))
+        present(alert, animated: true)
+    }
+
     
+    private func setUpView() {
         view.addSubview(scrollView)
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.addSubview(contentView)
@@ -158,7 +205,7 @@ extension SettingsViewController {
             closeButton.heightAnchor.constraint(equalToConstant: 32),
             
             //  Premium Banner
-            premiumBannerView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16),
+            premiumBannerView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10),
             premiumBannerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             premiumBannerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             premiumBannerView.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.09), // flexible

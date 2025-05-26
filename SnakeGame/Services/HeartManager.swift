@@ -50,6 +50,7 @@ struct HeartManager {
             return
         }
 
+        // if hearts < 3, reset and notif
         if hearts < 3 {
             hearts = 3
         }

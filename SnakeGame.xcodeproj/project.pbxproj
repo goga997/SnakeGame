@@ -46,6 +46,7 @@
 		DFD0476B2DE45075009093E4 /* LabeledSwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD0476A2DE45075009093E4 /* LabeledSwitchView.swift */; };
 		DFD0476E2DE466B0009093E4 /* AppPoliciesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD0476D2DE466B0009093E4 /* AppPoliciesTableView.swift */; };
 		DFD047702DE466E8009093E4 /* AppPoliciesItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD0476F2DE466E8009093E4 /* AppPoliciesItem.swift */; };
+		DFD047722DE4B18C009093E4 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD047712DE4B18C009093E4 /* NotificationManager.swift */; };
 		DFD62B182B3491DC00416EFC /* FingerPaint-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DFD62B172B3491DC00416EFC /* FingerPaint-Regular.ttf */; };
 		DFD62B1A2B34954300416EFC /* UIFont + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD62B192B34954300416EFC /* UIFont + Extension.swift */; };
 /* End PBXBuildFile section */
@@ -91,6 +92,7 @@
 		DFD0476A2DE45075009093E4 /* LabeledSwitchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabeledSwitchView.swift; sourceTree = "<group>"; };
 		DFD0476D2DE466B0009093E4 /* AppPoliciesTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPoliciesTableView.swift; sourceTree = "<group>"; };
 		DFD0476F2DE466E8009093E4 /* AppPoliciesItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPoliciesItem.swift; sourceTree = "<group>"; };
+		DFD047712DE4B18C009093E4 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		DFD62B172B3491DC00416EFC /* FingerPaint-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FingerPaint-Regular.ttf"; sourceTree = "<group>"; };
 		DFD62B192B34954300416EFC /* UIFont + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,6 +123,7 @@
 				DF2C27802D61591100DA9DF4 /* HeartManager.swift */,
 				DF541B202D78EC4C00E68252 /* AdsManager.swift */,
 				DF541B222D78FC7500E68252 /* NetworkManager.swift */,
+				DFD047712DE4B18C009093E4 /* NotificationManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 				DF87E1242B2748EA00AA8678 /* AddPoint.swift in Sources */,
 				DFB301732B2F6B840072D9A7 /* MainView.swift in Sources */,
 				DF4D6E1D2B3373D7003520C3 /* HapticsManager.swift in Sources */,
+				DFD047722DE4B18C009093E4 /* NotificationManager.swift in Sources */,
 				DF87E11A2B1F51DB00AA8678 /* GameModel.swift in Sources */,
 				DFB301842B2FC4200072D9A7 /* ControlBoardButton.swift in Sources */,
 				DFB3018A2B30DDF40072D9A7 /* CustomAlert.swift in Sources */,
