@@ -14,9 +14,10 @@ class SettingsViewController: UIViewController {
     
     private var titleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.fingerPaintFont26()
+        //label.font = UIFont.fingerPaintFont26()
+        label.font = .systemFont(ofSize: 26, weight: .medium)
         label.textColor = #colorLiteral(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)
-        label.text = "Settings"
+        label.text = "settings_title".localized
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -34,7 +35,7 @@ class SettingsViewController: UIViewController {
     
     private lazy var notificationsToggle: LabeledSwitchView = {
         let savedState = UserDefaults.standard.bool(forKey: "notificationsEnabled")
-        let toggle = LabeledSwitchView(title: "Notifications", isOn: savedState) { isOn in
+        let toggle = LabeledSwitchView(title: "notifications_title".localized, isOn: savedState) { isOn in
             if isOn {
                 NotificationManager.shared.isAuthorized { authorized in
                     DispatchQueue.main.async {
@@ -58,7 +59,7 @@ class SettingsViewController: UIViewController {
     }()
     
     private let hapticToggle = LabeledSwitchView(
-        title: "Haptic",
+        title: "haptic_title".localized,
         isOn: UserDefaults.standard.bool(forKey: "hapticsEnabled") //read saved state
     ) { isOn in
         print("Haptic switched to \(isOn)")
@@ -68,7 +69,7 @@ class SettingsViewController: UIViewController {
     private let appPoliciesTableView = AppPoliciesTableView()
     
     
-    //VIEW DID LOAD
+    //VIEW DID LOAD__________________________________________________________________________
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = true
@@ -84,8 +85,25 @@ class SettingsViewController: UIViewController {
                 }
             }
         }
-
+        
+        //for language Localization
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(updateTextsForLanguage),
+            name: .languageChanged,
+            object: nil
+        )
     }
+    
+    @objc private func updateTextsForLanguage() {
+        titleLabel.text = "settings_title".localized
+        premiumBannerView.updateTexts()
+        notificationsToggle.updateTitle("notifications_title".localized)
+        hapticToggle.updateTitle("haptic_title".localized)
+        settingsTableView.reloadData()
+        appPoliciesTableView.reloadData()
+    }
+
     
     private func isNotificationToggleEnabled() -> Bool {
         let granted = UserDefaults.standard.bool(forKey: "notificationsEnabled")
@@ -151,7 +169,8 @@ extension SettingsViewController: SettingsTableViewDelegate {
     func didSelectSettingsItem(_ item: SettingsItem) {
         switch item {
         case .language:
-            print("language")
+            let languageVC = LanguageViewController()
+            navigationController?.pushViewController(languageVC, animated: true)
         case .buyHearts:
             print("Tapped: Buy Hearts")
         case .resetOnboarding:
@@ -205,7 +224,7 @@ extension SettingsViewController {
             closeButton.heightAnchor.constraint(equalToConstant: 32),
             
             //  Premium Banner
-            premiumBannerView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10),
+            premiumBannerView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 14),
             premiumBannerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             premiumBannerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             premiumBannerView.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.09), // flexible

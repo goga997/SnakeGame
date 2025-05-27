@@ -12,7 +12,7 @@ class PopUpView: UIView {
     
     private let remainingScansLabel: UILabel = {
         let label = UILabel()
-        label.text = "Remaining games"
+        label.text = "popup_remaining_games".localized
         label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         label.textColor = UIColor.gray
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -43,7 +43,7 @@ class PopUpView: UIView {
     
     private let perAdLabel: UILabel = {
         let label = UILabel()
-        label.text = "per Ad"
+        label.text = "popup_per_ad".localized
         label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         label.textColor = UIColor.gray
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -120,11 +120,19 @@ class PopUpView: UIView {
             self.viewAdButton.isEnabled = true
             self.viewAdButton.alpha = 1.0
         }
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(updateTexts), name: .languageChanged, object: nil)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    @objc private func updateTexts() {
+        remainingScansLabel.text = "popup_remaining_games".localized
+        perAdLabel.text = "popup_per_ad".localized
+    }
+
     
     @objc func updateHearts() {
         scansCountLabel.text = "\(HeartManager.hearts)"

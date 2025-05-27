@@ -44,6 +44,11 @@ class LabeledSwitchView: UIView {
         toggleSwitch.setOn(isOn, animated: false)
     }
     
+    //for language Localization
+    func updateTitle(_ newTitle: String) {
+        titleLable.text = newTitle
+    }
+    
     private func setupLayout() {
         addSubview(titleLable)
         addSubview(toggleSwitch)

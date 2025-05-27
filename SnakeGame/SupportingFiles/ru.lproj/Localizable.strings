@@ -1,0 +1,28 @@
+/* 
+  Localizable.strings
+  SnakeGame
+
+  Created by Grigore on 27.05.2025.
+  
+*/
+settings_title = "Настройки";
+notifications_title = "Уведомления";
+haptic_title = "Вибрация";
+language_title = "Язык";
+buy_hearts = "Купить сердца";
+reset_onboarding = "Сброс обучения";
+follow_socials = "Следить в соцсетях";
+app_review = "Отзыв в AppStore";
+settings_terms_of_use = "Условия использования";
+settings_privacy = "Конфиденциальность";
+settings_legal_notice = "Юридическая информация";
+language_changed = "Язык изменён";
+premium_unlock = "Открыть Премиум";
+premium_description = "Получите бесконечные жизни, без рекламы";
+popup_remaining_games = "Оставшиеся игры";
+popup_per_ad = "за рекламу";
+grid_changed = "Сетка: выключена";
+alert_no_hearts_title = "Больше нет жизней";
+alert_no_hearts_message = "У вас недостаточно жизней, чтобы продолжить игру.\nПожалуйста, попробуйте позже или посмотрите рекламу, чтобы получить жизни.";
+no_internet_title = "Нет подключения к интернету";
+no_internet_message = "Проверьте подключение к интернету и попробуйте снова.";

@@ -73,7 +73,6 @@ class MainViewController: UIViewController {
     @objc func playButtonTapped() {   //Play Button + Pause Button
         if gameModel == nil || gameModel?.isGameOver == true {
             guard HeartManager.hearts > 0 else {
-                    print("no more hearts")
                     showNoHeartsAlert()
                     return
                 }
@@ -117,8 +116,8 @@ class MainViewController: UIViewController {
     
     private func showNoHeartsAlert() {
         let alert = UIAlertController(
-            title: "No More Hearts",
-            message: "You don't have enough hearts to continue playing.\nPlease try again later or you can gain hearts watching ads.",
+            title: "alert_no_hearts_title".localized,
+            message: "alert_no_hearts_message".localized,
             preferredStyle: .alert
         )
         

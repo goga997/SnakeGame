@@ -47,6 +47,10 @@
 		DFD0476E2DE466B0009093E4 /* AppPoliciesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD0476D2DE466B0009093E4 /* AppPoliciesTableView.swift */; };
 		DFD047702DE466E8009093E4 /* AppPoliciesItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD0476F2DE466E8009093E4 /* AppPoliciesItem.swift */; };
 		DFD047722DE4B18C009093E4 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD047712DE4B18C009093E4 /* NotificationManager.swift */; };
+		DFD047742DE5D9FE009093E4 /* LocalizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD047732DE5D9FE009093E4 /* LocalizationManager.swift */; };
+		DFD047762DE5DC2E009093E4 /* LanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD047752DE5DC2E009093E4 /* LanguageViewController.swift */; };
+		DFD047972DE5EB16009093E4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DFD047952DE5EB16009093E4 /* Localizable.strings */; };
+		DFD0479C2DE5EE80009093E4 /* String + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD0479B2DE5EE80009093E4 /* String + Extension.swift */; };
 		DFD62B182B3491DC00416EFC /* FingerPaint-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DFD62B172B3491DC00416EFC /* FingerPaint-Regular.ttf */; };
 		DFD62B1A2B34954300416EFC /* UIFont + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD62B192B34954300416EFC /* UIFont + Extension.swift */; };
 /* End PBXBuildFile section */
@@ -93,6 +97,13 @@
 		DFD0476D2DE466B0009093E4 /* AppPoliciesTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPoliciesTableView.swift; sourceTree = "<group>"; };
 		DFD0476F2DE466E8009093E4 /* AppPoliciesItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPoliciesItem.swift; sourceTree = "<group>"; };
 		DFD047712DE4B18C009093E4 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		DFD047732DE5D9FE009093E4 /* LocalizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationManager.swift; sourceTree = "<group>"; };
+		DFD047752DE5DC2E009093E4 /* LanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageViewController.swift; sourceTree = "<group>"; };
+		DFD047962DE5EB16009093E4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DFD047982DE5EB8F009093E4 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DFD047992DE5EB94009093E4 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DFD0479A2DE5EB96009093E4 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DFD0479B2DE5EE80009093E4 /* String + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Extension.swift"; sourceTree = "<group>"; };
 		DFD62B172B3491DC00416EFC /* FingerPaint-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FingerPaint-Regular.ttf"; sourceTree = "<group>"; };
 		DFD62B192B34954300416EFC /* UIFont + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -124,6 +135,7 @@
 				DF541B202D78EC4C00E68252 /* AdsManager.swift */,
 				DF541B222D78FC7500E68252 /* NetworkManager.swift */,
 				DFD047712DE4B18C009093E4 /* NotificationManager.swift */,
+				DFD047732DE5D9FE009093E4 /* LocalizationManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -184,6 +196,8 @@
 				DF17AA722D17096600FFEC46 /* PopUpView.swift */,
 				DF2C27822D64EB5500DA9DF4 /* UIComponents.swift */,
 				DFD0475E2DDB9AA0009093E4 /* UIColor + Extension.swift */,
+				DFD047952DE5EB16009093E4 /* Localizable.strings */,
+				DFD0479B2DE5EE80009093E4 /* String + Extension.swift */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -277,6 +291,7 @@
 			isa = PBXGroup;
 			children = (
 				DFD0475C2DD9D5A0009093E4 /* SettingsViewController.swift */,
+				DFD047752DE5DC2E009093E4 /* LanguageViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -355,6 +370,9 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
+				fr,
+				ru,
 			);
 			mainGroup = DF87E0F22B1F422400AA8678;
 			packageReferences = (
@@ -375,6 +393,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFD62B182B3491DC00416EFC /* FingerPaint-Regular.ttf in Resources */,
+				DFD047972DE5EB16009093E4 /* Localizable.strings in Resources */,
 				DF87E1082B1F422500AA8678 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -386,6 +405,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFD047742DE5D9FE009093E4 /* LocalizationManager.swift in Sources */,
+				DFD047762DE5DC2E009093E4 /* LanguageViewController.swift in Sources */,
+				DFD0479C2DE5EE80009093E4 /* String + Extension.swift in Sources */,
 				DFB301862B2FD2B30072D9A7 /* Score.swift in Sources */,
 				DFB301772B2F8CD40072D9A7 /* GameDetails.swift in Sources */,
 				DFD047612DDBA339009093E4 /* PremiumBannerView.swift in Sources */,
@@ -429,6 +451,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DFD047952DE5EB16009093E4 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DFD047962DE5EB16009093E4 /* en */,
+				DFD047982DE5EB8F009093E4 /* fr */,
+				DFD047992DE5EB94009093E4 /* ru */,
+				DFD0479A2DE5EB96009093E4 /* es */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		DF87E10D2B1F422500AA8678 /* Debug */ = {
@@ -562,9 +598,10 @@
 				INFOPLIST_FILE = SnakeGame/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -593,9 +630,10 @@
 				INFOPLIST_FILE = SnakeGame/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

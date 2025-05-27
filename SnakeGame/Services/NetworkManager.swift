@@ -36,8 +36,8 @@ class NetworkManager {
     
     func showNoInternetAlert() {
         let alert = UIAlertController(
-            title: "No Internet Connection",
-            message: "Please check your internet connection and try again.",
+            title: "no_internet_title".localized,
+            message: "no_internet_message".localized,
             preferredStyle: .alert
         )
         

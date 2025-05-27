@@ -12,10 +12,9 @@ enum AppPoliciesItem: CaseIterable {
     
     var title: String {
         switch self {
-        case .termsOfUse: return "Terms of Use"
-        case .privacy: return "Privacy"
-        case .legalNotice: return "Legal Notice"
-        
+        case .termsOfUse: return "settings_terms_of_use".localized
+        case .privacy: return "settings_privacy".localized
+        case .legalNotice: return "settings_legal_notice".localized
         }
     }
     

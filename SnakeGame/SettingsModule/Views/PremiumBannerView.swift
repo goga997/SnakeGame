@@ -14,7 +14,7 @@ class PremiumBannerView: UIView {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Unlock Premium"
+        label.text = "premium_unlock".localized
         label.font = .boldSystemFont(ofSize: 18)
         label.textColor = .white
         return label
@@ -22,7 +22,7 @@ class PremiumBannerView: UIView {
     
     private let subtitleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Get unlimited hearts, avoid ads"
+        label.text = "premium_description".localized
         label.font = .systemFont(ofSize: 14)
         label.textColor = UIColor.white.withAlphaComponent(0.90)
         return label
@@ -46,6 +46,13 @@ class PremiumBannerView: UIView {
     }
     
     // --------------------------------------------------------
+    
+    //for language
+    func updateTexts() {
+        titleLabel.text = "premium_unlock".localized
+        subtitleLabel.text = "premium_description".localized
+    }
+
     
     private func applyGradientBackgroundForSettView() {
         let gradientLayer = CAGradientLayer()

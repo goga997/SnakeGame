@@ -115,6 +115,7 @@ class SetupViewController: UIViewController {
             } else {
                 SnakeColor.grid = UIColor.clear
                 sender.setImage(UIImage(systemName: "minus"), for: .normal)
+                showChangeGridLabel()
             }
         case 1:
             giftButton = sender
@@ -154,5 +155,30 @@ class SetupViewController: UIViewController {
         
         giftButton?.isEnabled = true
         giftButton?.layer.opacity = 1
+    }
+    
+    private func showChangeGridLabel() {
+        let label = UILabel()
+        label.text = "grid_changed".localized
+        label.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+        label.textAlignment = .center
+        label.textColor = .white
+        label.backgroundColor = UIColor.black.withAlphaComponent(0.7)
+        label.layer.cornerRadius = 10
+        label.clipsToBounds = true
+        label.translatesAutoresizingMaskIntoConstraints = false
+
+        view.addSubview(label)
+
+        NSLayoutConstraint.activate([
+            label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            label.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
+            label.heightAnchor.constraint(equalToConstant: 40),
+            label.widthAnchor.constraint(equalToConstant: 200)
+        ])
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            label.removeFromSuperview()
+        }
     }
 }

@@ -12,11 +12,11 @@ enum SettingsItem: CaseIterable {
     
     var title: String {
         switch self {
-        case .language: return "Language"
-        case .buyHearts: return "Buy Hearts"
-        case .resetOnboarding: return "Reset Onboarding"
-        case .followOnSocials: return "Follow on Socials"
-        case .appStoreReview: return "AppStore Review"
+        case .language: return "language_title".localized
+        case .buyHearts: return "buy_hearts".localized
+        case .resetOnboarding: return "reset_onboarding".localized
+        case .followOnSocials: return "follow_socials".localized
+        case .appStoreReview: return "app_review".localized
         }
     }
     

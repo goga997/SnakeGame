@@ -1,0 +1,30 @@
+/* 
+  Localizable.strings
+  SnakeGame
+
+  Created by Grigore on 27.05.2025.
+  
+*/
+settings_title = "Settings";
+notifications_title = "Notifications";
+haptic_title = "Haptic";
+language_title = "Language";
+buy_hearts = "Buy Hearts";
+reset_onboarding = "Reset Onboarding";
+follow_socials = "Follow on Socials";
+app_review = "AppStore Review";
+settings_terms_of_use = "Terms of Use";
+settings_privacy = "Privacy";
+settings_legal_notice = "Legal Notice";
+language_changed = "Language changed";
+premium_unlock = "Unlock Premium";
+premium_description = "Get unlimited hearts, avoid ads";
+popup_remaining_games = "Remaining games";
+popup_per_ad = "per Ad";
+grid_changed = "Grid set: Off";
+alert_no_hearts_title = "No More Hearts";
+alert_no_hearts_message = "You don't have enough hearts to continue playing.\nPlease try again later or you can gain hearts watching ads.";
+no_internet_title = "No Internet Connection";
+no_internet_message = "Please check your internet connection and try again.";
+
+
