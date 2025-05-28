@@ -26,3 +26,7 @@ alert_no_hearts_title = "No hay más corazones";
 alert_no_hearts_message = "No tienes suficientes corazones para seguir jugando.\nInténtalo más tarde o gana corazones viendo anuncios.";
 no_internet_title = "Sin conexión a Internet";
 no_internet_message = "Por favor, revisa tu conexión a Internet e inténtalo de nuevo.";
+choose_language_title = "Elegir idioma";
+next_onboarding = "Siguiente";
+start_game = "Comenzar juego";
+

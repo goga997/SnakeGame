@@ -55,9 +55,7 @@ class SetupViewController: UIViewController {
             }
         }
 
-        
     }
-
     
     @objc func updateHeartsLabel() {
         mainSetUpView?.heartsLabel.text = "\(HeartManager.hearts)"

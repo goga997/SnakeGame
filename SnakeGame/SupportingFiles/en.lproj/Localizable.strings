@@ -26,5 +26,8 @@ alert_no_hearts_title = "No More Hearts";
 alert_no_hearts_message = "You don't have enough hearts to continue playing.\nPlease try again later or you can gain hearts watching ads.";
 no_internet_title = "No Internet Connection";
 no_internet_message = "Please check your internet connection and try again.";
+choose_language_title = "Choose your language";
+next_onboarding = "Next";
+start_game = "Start Game";
 
 

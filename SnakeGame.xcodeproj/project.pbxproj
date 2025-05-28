@@ -51,6 +51,9 @@
 		DFD047762DE5DC2E009093E4 /* LanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD047752DE5DC2E009093E4 /* LanguageViewController.swift */; };
 		DFD047972DE5EB16009093E4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DFD047952DE5EB16009093E4 /* Localizable.strings */; };
 		DFD0479C2DE5EE80009093E4 /* String + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD0479B2DE5EE80009093E4 /* String + Extension.swift */; };
+		DFD0479F2DE6374A009093E4 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD0479E2DE6374A009093E4 /* OnboardingViewController.swift */; };
+		DFD047A12DE64028009093E4 /* OnboardingLanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD047A02DE64028009093E4 /* OnboardingLanguageViewController.swift */; };
+		DFD047A32DE645B7009093E4 /* OnboardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD047A22DE645B7009093E4 /* OnboardingPage.swift */; };
 		DFD62B182B3491DC00416EFC /* FingerPaint-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DFD62B172B3491DC00416EFC /* FingerPaint-Regular.ttf */; };
 		DFD62B1A2B34954300416EFC /* UIFont + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD62B192B34954300416EFC /* UIFont + Extension.swift */; };
 /* End PBXBuildFile section */
@@ -104,6 +107,9 @@
 		DFD047992DE5EB94009093E4 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DFD0479A2DE5EB96009093E4 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DFD0479B2DE5EE80009093E4 /* String + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Extension.swift"; sourceTree = "<group>"; };
+		DFD0479E2DE6374A009093E4 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		DFD047A02DE64028009093E4 /* OnboardingLanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingLanguageViewController.swift; sourceTree = "<group>"; };
+		DFD047A22DE645B7009093E4 /* OnboardingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage.swift; sourceTree = "<group>"; };
 		DFD62B172B3491DC00416EFC /* FingerPaint-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FingerPaint-Regular.ttf"; sourceTree = "<group>"; };
 		DFD62B192B34954300416EFC /* UIFont + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -160,6 +166,7 @@
 		DF87E0FD2B1F422400AA8678 /* SnakeGame */ = {
 			isa = PBXGroup;
 			children = (
+				DFD0479D2DE63733009093E4 /* OnboardingModule */,
 				DF87E1122B1F4BDA00AA8678 /* Application */,
 				DFB3017C2B2FC25D0072D9A7 /* MainScreenModule */,
 				DFB3017B2B2FC23B0072D9A7 /* BoardGameModule */,
@@ -317,6 +324,16 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		DFD0479D2DE63733009093E4 /* OnboardingModule */ = {
+			isa = PBXGroup;
+			children = (
+				DFD0479E2DE6374A009093E4 /* OnboardingViewController.swift */,
+				DFD047A02DE64028009093E4 /* OnboardingLanguageViewController.swift */,
+				DFD047A22DE645B7009093E4 /* OnboardingPage.swift */,
+			);
+			path = OnboardingModule;
+			sourceTree = "<group>";
+		};
 		DFD62B162B34907B00416EFC /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -424,7 +441,9 @@
 				DFB3018E2B30DEEC0072D9A7 /* TryAgainButton.swift in Sources */,
 				DFB301802B2FC2ED0072D9A7 /* SetupViewController.swift in Sources */,
 				DF87E1032B1F422400AA8678 /* MainViewController.swift in Sources */,
+				DFD047A12DE64028009093E4 /* OnboardingLanguageViewController.swift in Sources */,
 				DF87E1182B1F4CBF00AA8678 /* BoardView.swift in Sources */,
+				DFD047A32DE645B7009093E4 /* OnboardingPage.swift in Sources */,
 				DF541B232D78FC7500E68252 /* NetworkManager.swift in Sources */,
 				DF541B212D78EC4C00E68252 /* AdsManager.swift in Sources */,
 				DF2C27812D61591100DA9DF4 /* HeartManager.swift in Sources */,
@@ -433,6 +452,7 @@
 				DFD047672DDE2573009093E4 /* SettingsCell.swift in Sources */,
 				DFD0475F2DDB9AA0009093E4 /* UIColor + Extension.swift in Sources */,
 				DF87E11C2B1F55F900AA8678 /* Resources.swift in Sources */,
+				DFD0479F2DE6374A009093E4 /* OnboardingViewController.swift in Sources */,
 				DFD047632DDE1E51009093E4 /* SettingsTableView.swift in Sources */,
 				DF87E1222B2740B000AA8678 /* Snake.swift in Sources */,
 				DFD047702DE466E8009093E4 /* AppPoliciesItem.swift in Sources */,

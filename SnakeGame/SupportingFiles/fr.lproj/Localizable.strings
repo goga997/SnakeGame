@@ -26,4 +26,7 @@ alert_no_hearts_title = "Plus de cœurs";
 alert_no_hearts_message = "Vous n'avez pas assez de cœurs pour continuer à jouer.\nVeuillez réessayer plus tard ou gagnez des cœurs en regardant des publicités.";
 no_internet_title = "Pas de connexion Internet";
 no_internet_message = "Veuillez vérifier votre connexion Internet et réessayer.";
+choose_language_title = "Choisissez votre langue";
+next_onboarding = "Suivant";
+start_game = "Commencer le jeu";
 
