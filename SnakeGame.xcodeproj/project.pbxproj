@@ -56,6 +56,7 @@
 		DFD047A32DE645B7009093E4 /* OnboardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD047A22DE645B7009093E4 /* OnboardingPage.swift */; };
 		DFD62B182B3491DC00416EFC /* FingerPaint-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DFD62B172B3491DC00416EFC /* FingerPaint-Regular.ttf */; };
 		DFD62B1A2B34954300416EFC /* UIFont + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD62B192B34954300416EFC /* UIFont + Extension.swift */; };
+		DFDC907D2DE827A600F75313 /* SocialsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDC907C2DE827A600F75313 /* SocialsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -112,6 +113,7 @@
 		DFD047A22DE645B7009093E4 /* OnboardingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage.swift; sourceTree = "<group>"; };
 		DFD62B172B3491DC00416EFC /* FingerPaint-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FingerPaint-Regular.ttf"; sourceTree = "<group>"; };
 		DFD62B192B34954300416EFC /* UIFont + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + Extension.swift"; sourceTree = "<group>"; };
+		DFDC907C2DE827A600F75313 /* SocialsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -299,6 +301,7 @@
 			children = (
 				DFD0475C2DD9D5A0009093E4 /* SettingsViewController.swift */,
 				DFD047752DE5DC2E009093E4 /* LanguageViewController.swift */,
+				DFDC907C2DE827A600F75313 /* SocialsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -373,7 +376,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1500;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 1620;
 				TargetAttributes = {
 					DF87E0FA2B1F422400AA8678 = {
 						CreatedOnToolsVersion = 15.0.1;
@@ -431,6 +434,7 @@
 				DF87E1242B2748EA00AA8678 /* AddPoint.swift in Sources */,
 				DFB301732B2F6B840072D9A7 /* MainView.swift in Sources */,
 				DF4D6E1D2B3373D7003520C3 /* HapticsManager.swift in Sources */,
+				DFDC907D2DE827A600F75313 /* SocialsViewController.swift in Sources */,
 				DFD047722DE4B18C009093E4 /* NotificationManager.swift in Sources */,
 				DF87E11A2B1F51DB00AA8678 /* GameModel.swift in Sources */,
 				DFB301842B2FC4200072D9A7 /* ControlBoardButton.swift in Sources */,
@@ -492,6 +496,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -555,6 +560,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

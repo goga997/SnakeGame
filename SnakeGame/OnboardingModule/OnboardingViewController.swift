@@ -44,6 +44,7 @@ class OnboardingViewController: UIPageViewController {
         pageControl.translatesAutoresizingMaskIntoConstraints = false
 
         view.addSubview(pageControl)
+        pageControl.isUserInteractionEnabled = false
         NSLayoutConstraint.activate([
             pageControl.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -120),
             pageControl.centerXAnchor.constraint(equalTo: view.centerXAnchor)

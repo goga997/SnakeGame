@@ -24,8 +24,7 @@ class LanguageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Choose Language"
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         setupTableView()
     }
     

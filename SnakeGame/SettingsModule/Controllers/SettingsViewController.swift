@@ -171,12 +171,20 @@ extension SettingsViewController: SettingsTableViewDelegate {
         case .language:
             let languageVC = LanguageViewController()
             navigationController?.pushViewController(languageVC, animated: true)
+            
         case .buyHearts:
             print("Tapped: Buy Hearts")
+            
         case .resetOnboarding:
-            print("Tapped: Reset Onboarding")
+            UserDefaults.standard.set(false, forKey: "onboardingShown")
+            let onboardingVC = OnboardingViewController()
+            onboardingVC.modalPresentationStyle = .fullScreen
+            present(onboardingVC, animated: true)
+            
         case .followOnSocials:
-            print("Tapped: Follow on Socials")
+            let socialsVC = SocialsViewController()
+            navigationController?.pushViewController(socialsVC, animated: true)
+            
         case .appStoreReview:
             print("Tapped: AppStore Review")
         }
