@@ -76,7 +76,7 @@ class CustomAlert {
         
         
         //Central Main Label
-        let yourScoreLabel = UILabel(text: "Your Game Result:", font: .fingerPaintFont22(), textColor: .black)
+        let yourScoreLabel = UILabel(text: "your_game_result".localized, font: .fingerPaintFont22(), textColor: .black)
         yourScoreLabel.frame = CGRect(x: 10,
                                     y: alertView.frame.height * 0.4 + 60,
                                     width: alertView.frame.width - 20,
@@ -87,7 +87,7 @@ class CustomAlert {
         
         
         //All Labels + Views
-        let scoreLabel = UILabel(text: "Score:")
+        let scoreLabel = UILabel(text: "score_label".localized)
         scoreLabel.textColor = .black
         scoreLabel.translatesAutoresizingMaskIntoConstraints = true
         scoreLabel.frame = CGRect(x: 40,
@@ -117,7 +117,7 @@ class CustomAlert {
         ])
 
         
-        let toNextRemainedLabel = UILabel(text: "Remained points to next level:")
+        let toNextRemainedLabel = UILabel(text: "to_next_level_label_inAlert".localized)
         toNextRemainedLabel.textColor = .black
         toNextRemainedLabel.translatesAutoresizingMaskIntoConstraints = true
         toNextRemainedLabel.frame = CGRect(x: 40,
@@ -147,7 +147,7 @@ class CustomAlert {
         ])
         
         //Button of action
-        let tryAgainButton = TryAgainButton(text: "Try Again")
+        let tryAgainButton = TryAgainButton(text: "try_again_button".localized)
         tryAgainButton.frame = CGRect(x: 60,
                                 y: toNextRemainedView.frame.maxY + 15,
                                 width: alertView.frame.width - 120,

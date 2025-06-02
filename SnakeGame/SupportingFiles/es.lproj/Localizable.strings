@@ -29,4 +29,9 @@ no_internet_message = "Por favor, revisa tu conexión a Internet e inténtalo de
 choose_language_title = "Elegir idioma";
 next_onboarding = "Siguiente";
 start_game = "Comenzar juego";
-
+choose_board_setUp = "Elige el tamaño\ndel tablero";
+to_next_level_label = "Puntos restantes para el siguiente nivel";
+your_game_result = "Tu resultado del juego:";
+score_label = "Puntuación:";
+to_next_level_label_inAlert = "Puntos restantes para el siguiente nivel:";
+try_again_button = "Intentar nuevo";

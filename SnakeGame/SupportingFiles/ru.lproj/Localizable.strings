@@ -29,4 +29,9 @@ no_internet_message = "Проверьте подключение к интерн
 choose_language_title = "Выберите свой язык";
 next_onboarding = "Далее";
 start_game = "Начать игру";
-
+choose_board_setUp = "Выберите\nразмер поля";
+to_next_level_label = "Осталось очков до следующего уровня!";
+your_game_result = "Ваш результат игры:";
+score_label = "Очки:";
+to_next_level_label_inAlert = "Осталось очков до следующего уровня:";
+try_again_button = "Попробовать снова";

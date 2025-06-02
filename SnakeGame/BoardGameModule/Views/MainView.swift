@@ -43,7 +43,7 @@ class MainView: UIView {
     //Labels
     let scoreLabel = UILabel()
     let nextLevelNumberLabel = UILabel()
-    let toNextLevelLabel = UILabel(text: "Points remained to next Level !!")
+    let toNextLevelLabel = UILabel(text: "to_next_level_label".localized)
     
     private let hourglassImageView: UIImageView = {
         let imageView = UIImageView()
@@ -101,6 +101,8 @@ class MainView: UIView {
         configureBackToOptionsButton()
         
         configureHeartsLabel()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(updateLocalizedTexts), name: .languageChanged, object: nil)
     }
     
     override func layoutSubviews() {
@@ -265,6 +267,10 @@ class MainView: UIView {
         progressView.isHidden = false
         nextLevelNumberLabel.isHidden = false
         toNextLevelLabel.isHidden = false
+    }
+    
+    @objc private func updateLocalizedTexts() {
+        toNextLevelLabel.text = "to_next_level_label".localized
     }
 }
 

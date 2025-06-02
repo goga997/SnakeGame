@@ -8,7 +8,14 @@
 import UIKit
 
 class SocialsViewController: UIViewController {
-
+    private lazy var backChevron: UIButton = {
+        let button = UIButton(type: .system)
+        button.setBackgroundImage(UIImage(systemName: "chevron.left"), for: .normal)
+        button.addTarget(self, action: #selector(backTyped), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -26,8 +33,14 @@ class SocialsViewController: UIViewController {
         stackView.addArrangedSubview(facebookButton)
         stackView.addArrangedSubview(youtubeButton)
 
+        view.addSubview(backChevron)
         view.addSubview(stackView)
         NSLayoutConstraint.activate([
+            backChevron.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16),
+            backChevron.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
+            backChevron.heightAnchor.constraint(equalToConstant: 26),
+            backChevron.widthAnchor.constraint(equalToConstant: 16),
+            
             stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40)
@@ -59,6 +72,10 @@ class SocialsViewController: UIViewController {
         } else if let webURL = URL(string: web) {
             UIApplication.shared.open(webURL)
         }
+    }
+    
+    @objc private func backTyped() {
+        navigationController?.popViewController(animated: true)
     }
 }
 

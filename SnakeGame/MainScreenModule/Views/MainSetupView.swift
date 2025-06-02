@@ -28,6 +28,8 @@ class MainSetupView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        NotificationCenter.default.addObserver(self, selector: #selector(updateLocalizedTexts), name: .languageChanged, object: nil)
+        
         configureControlBoardButtonStack()
         confchooseLabel()
         configureSettingsButtonStackView()
@@ -37,6 +39,10 @@ class MainSetupView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    @objc private func updateLocalizedTexts() {
+        chooseBoardLabel.text = "choose_board_setUp".localized
     }
     
     private func configureHeartsLabel() {
@@ -56,7 +62,7 @@ class MainSetupView: UIView {
     }
     
     private func confchooseLabel() {
-        chooseBoardLabel.text = "Choose Your\nBoard Size:"
+        chooseBoardLabel.text = "choose_board_setUp".localized 
         chooseBoardLabel.numberOfLines = 0
         chooseBoardLabel.textColor = .black
         //#colorLiteral(red: 0.8526944518, green: 0.2699841559, blue: 0.1734133065, alpha: 1)

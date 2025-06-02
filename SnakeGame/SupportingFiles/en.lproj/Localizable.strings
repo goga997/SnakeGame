@@ -29,5 +29,11 @@ no_internet_message = "Please check your internet connection and try again.";
 choose_language_title = "Choose your language";
 next_onboarding = "Next";
 start_game = "Start Game";
+choose_board_setUp = "Choose your\nboard type:";
+to_next_level_label = "Points remained to next Level !!";
+your_game_result = "Your Game Result:";
+score_label = "Score:";
+to_next_level_label_inAlert = "Remained points to next level:";
+try_again_button = "Try Again";
 
 
