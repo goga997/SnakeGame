@@ -93,6 +93,18 @@ class SettingsViewController: UIViewController {
             name: .languageChanged,
             object: nil
         )
+        
+        //for premium tap
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(premiumBannerTapped))
+        premiumBannerView.isUserInteractionEnabled = true
+        premiumBannerView.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc private func premiumBannerTapped() {
+        let premiumVC = MainPremiumController()
+        premiumVC.modalPresentationStyle = .fullScreen
+        HapticsManager.shared.impactFeedback(for: .soft)
+        present(premiumVC, animated: true)
     }
     
     @objc private func updateTextsForLanguage() {

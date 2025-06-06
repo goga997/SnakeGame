@@ -42,7 +42,7 @@ class PremiumBannerView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        applyGradientBackgroundForSettView()
+        GradientHelper.applySettingsGradient(to: self)
     }
     
     // --------------------------------------------------------
@@ -51,27 +51,6 @@ class PremiumBannerView: UIView {
     func updateTexts() {
         titleLabel.text = "premium_unlock".localized
         subtitleLabel.text = "premium_description".localized
-    }
-
-    
-    private func applyGradientBackgroundForSettView() {
-        let gradientLayer = CAGradientLayer()
-                
-        gradientLayer.colors = [
-            UIColor(hex: "#A0E6F5").cgColor,
-            UIColor(hex: "#31AFC7").cgColor
-        ]
-        
-        gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.0)
-        gradientLayer.endPoint = CGPoint(x: 0.5, y: 1.0)
-        gradientLayer.frame = bounds
-
-        // Ensure there are no more layers added
-        if let oldLayer = layer.sublayers?.first, oldLayer is CAGradientLayer {
-            oldLayer.removeFromSuperlayer()
-        }
-
-        layer.insertSublayer(gradientLayer, at: 0)
     }
 
     

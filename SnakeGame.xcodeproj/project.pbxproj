@@ -57,6 +57,9 @@
 		DFD62B182B3491DC00416EFC /* FingerPaint-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DFD62B172B3491DC00416EFC /* FingerPaint-Regular.ttf */; };
 		DFD62B1A2B34954300416EFC /* UIFont + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD62B192B34954300416EFC /* UIFont + Extension.swift */; };
 		DFDC907D2DE827A600F75313 /* SocialsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDC907C2DE827A600F75313 /* SocialsViewController.swift */; };
+		DFDC90832DF1BD3E00F75313 /* MainPremiumController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDC90822DF1BD3E00F75313 /* MainPremiumController.swift */; };
+		DFDC90852DF1BD8400F75313 /* TopPremiumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDC90842DF1BD8400F75313 /* TopPremiumView.swift */; };
+		DFDC90872DF36D8700F75313 /* PerksListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDC90862DF36D8700F75313 /* PerksListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -114,6 +117,9 @@
 		DFD62B172B3491DC00416EFC /* FingerPaint-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FingerPaint-Regular.ttf"; sourceTree = "<group>"; };
 		DFD62B192B34954300416EFC /* UIFont + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + Extension.swift"; sourceTree = "<group>"; };
 		DFDC907C2DE827A600F75313 /* SocialsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialsViewController.swift; sourceTree = "<group>"; };
+		DFDC90822DF1BD3E00F75313 /* MainPremiumController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPremiumController.swift; sourceTree = "<group>"; };
+		DFDC90842DF1BD8400F75313 /* TopPremiumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopPremiumView.swift; sourceTree = "<group>"; };
+		DFDC90862DF36D8700F75313 /* PerksListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerksListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +174,7 @@
 		DF87E0FD2B1F422400AA8678 /* SnakeGame */ = {
 			isa = PBXGroup;
 			children = (
+				DFDC907E2DF1BCE600F75313 /* PremiumModule */,
 				DFD0479D2DE63733009093E4 /* OnboardingModule */,
 				DF87E1122B1F4BDA00AA8678 /* Application */,
 				DFB3017C2B2FC25D0072D9A7 /* MainScreenModule */,
@@ -345,6 +352,40 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		DFDC907E2DF1BCE600F75313 /* PremiumModule */ = {
+			isa = PBXGroup;
+			children = (
+				DFDC90812DF1BD0900F75313 /* Models */,
+				DFDC90802DF1BD0300F75313 /* Views */,
+				DFDC907F2DF1BCFB00F75313 /* Controllers */,
+			);
+			path = PremiumModule;
+			sourceTree = "<group>";
+		};
+		DFDC907F2DF1BCFB00F75313 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DFDC90822DF1BD3E00F75313 /* MainPremiumController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DFDC90802DF1BD0300F75313 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DFDC90842DF1BD8400F75313 /* TopPremiumView.swift */,
+				DFDC90862DF36D8700F75313 /* PerksListView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DFDC90812DF1BD0900F75313 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -429,6 +470,7 @@
 				DFD047762DE5DC2E009093E4 /* LanguageViewController.swift in Sources */,
 				DFD0479C2DE5EE80009093E4 /* String + Extension.swift in Sources */,
 				DFB301862B2FD2B30072D9A7 /* Score.swift in Sources */,
+				DFDC90832DF1BD3E00F75313 /* MainPremiumController.swift in Sources */,
 				DFB301772B2F8CD40072D9A7 /* GameDetails.swift in Sources */,
 				DFD047612DDBA339009093E4 /* PremiumBannerView.swift in Sources */,
 				DF87E1242B2748EA00AA8678 /* AddPoint.swift in Sources */,
@@ -439,6 +481,7 @@
 				DF87E11A2B1F51DB00AA8678 /* GameModel.swift in Sources */,
 				DFB301842B2FC4200072D9A7 /* ControlBoardButton.swift in Sources */,
 				DFB3018A2B30DDF40072D9A7 /* CustomAlert.swift in Sources */,
+				DFDC90852DF1BD8400F75313 /* TopPremiumView.swift in Sources */,
 				DFD047692DE1A92A009093E4 /* SettingsItem.swift in Sources */,
 				DFB54D1C2B3762E10010678F /* SettingButton.swift in Sources */,
 				DFD62B1A2B34954300416EFC /* UIFont + Extension.swift in Sources */,
@@ -464,6 +507,7 @@
 				DF87E0FF2B1F422400AA8678 /* AppDelegate.swift in Sources */,
 				DFD0475D2DD9D5A0009093E4 /* SettingsViewController.swift in Sources */,
 				DF87E1202B1F979600AA8678 /* MovingDirectionModel.swift in Sources */,
+				DFDC90872DF36D8700F75313 /* PerksListView.swift in Sources */,
 				DFB301752B2F82DD0072D9A7 /* GameTimer.swift in Sources */,
 				DF87E11E2B1F5AA800AA8678 /* GameCell.swift in Sources */,
 				DFD0476E2DE466B0009093E4 /* AppPoliciesTableView.swift in Sources */,

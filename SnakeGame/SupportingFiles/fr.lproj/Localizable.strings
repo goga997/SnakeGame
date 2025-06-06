@@ -35,3 +35,14 @@ your_game_result = "Votre résultat de jeu:";
 score_label = "Score:";
 to_next_level_label_inAlert = "Points restants pour le niveau suivant:";
 try_again_button = "Réessayer";
+upgrade_to = "Passer à";
+perk_one_premium = "Supprimer les publicités";
+perk_unlimited_hearts = "Cœurs illimités";
+perk_offline_play = "Jouez hors ligne partout";
+perk_all_boards = "Accès à tous les plateaux";
+cancel = "Annuler";
+premium_yearly = "2,99 $ par an";
+premium_lifetime = "6,99 $ paiement unique";
+restore_purchase = "Restaurer l'achat";
+or = "OU";
+

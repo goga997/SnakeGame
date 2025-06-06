@@ -40,3 +40,24 @@ extension UIColor {
             self.init(red: red, green: green, blue: blue, alpha: 1.0)
         }
 }
+
+struct GradientHelper {
+    
+    static func applySettingsGradient(to view: UIView) {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [
+            UIColor(hex: "#A0E6F5").cgColor,
+            UIColor(hex: "#31AFC7").cgColor
+        ]
+        gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.0)
+        gradientLayer.endPoint = CGPoint(x: 0.5, y: 1.0)
+        gradientLayer.frame = view.bounds
+        
+        if let oldLayer = view.layer.sublayers?.first, oldLayer is CAGradientLayer {
+            oldLayer.removeFromSuperlayer()
+        }
+        
+        view.layer.insertSublayer(gradientLayer, at: 0)
+    }
+    
+}

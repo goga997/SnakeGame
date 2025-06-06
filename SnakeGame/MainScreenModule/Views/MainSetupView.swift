@@ -62,7 +62,7 @@ class MainSetupView: UIView {
     }
     
     private func confchooseLabel() {
-        chooseBoardLabel.text = "choose_board_setUp".localized 
+        chooseBoardLabel.text = "choose_board_setUp".localized
         chooseBoardLabel.numberOfLines = 0
         chooseBoardLabel.textColor = .black
         //#colorLiteral(red: 0.8526944518, green: 0.2699841559, blue: 0.1734133065, alpha: 1)
@@ -83,6 +83,21 @@ class MainSetupView: UIView {
         let mediumButton = ControlBoardButton(text: "10 x 14")
         let hardButton = ControlBoardButton(text: "8 x 10")
         let veryHarddButton = ControlBoardButton(text: "8 x 8")
+
+        // Add lock image to all except the first button
+        let boardButtons = [veryEasyButton, easyButton, mediumButton, hardButton, veryHarddButton]
+        for (index, button) in boardButtons.enumerated() where index != 0 {
+            let lockImage = UIComponents.createLockImageView()
+            button.alpha = 0.82
+            button.addSubview(lockImage)
+            NSLayoutConstraint.activate([
+                lockImage.centerYAnchor.constraint(equalTo: button.centerYAnchor),
+                lockImage.trailingAnchor.constraint(equalTo: button.trailingAnchor, constant: -8),
+                lockImage.widthAnchor.constraint(equalToConstant: 16),
+                lockImage.heightAnchor.constraint(equalToConstant: 16)
+            ])
+            
+        }
         
         controlBoardButtonStack = UIStackView(arrangedSubviews: [veryEasyButton, easyButton, mediumButton, hardButton, veryHarddButton])
         

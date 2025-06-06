@@ -35,5 +35,14 @@ your_game_result = "Your Game Result:";
 score_label = "Score:";
 to_next_level_label_inAlert = "Remained points to next level:";
 try_again_button = "Try Again";
-
+upgrade_to = "Upgrade to";
+perk_one_premium = "Remove ads";
+perk_unlimited_hearts = "Unlimited hearts";
+perk_offline_play = "Play anywhere offline";
+perk_all_boards = "Get access to all boards";
+cancel = "Cancel";
+premium_yearly = "2.99 $ per year";
+premium_lifetime = "6.99 $ one-time purchase";
+restore_purchase = "Restore Purchase";
+or = "OR";
 

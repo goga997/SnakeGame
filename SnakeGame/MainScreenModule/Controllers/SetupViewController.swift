@@ -68,6 +68,17 @@ class SetupViewController: UIViewController {
     }
     
     @objc func levelButtonTapped(sender: UIButton) {
+        
+        let isPremium = false
+        
+        if sender.tag != 0 && !isPremium {
+            let premiumVC = MainPremiumController()
+            premiumVC.modalPresentationStyle = .fullScreen
+            HapticsManager.shared.impactFeedback(for: .soft)
+            present(premiumVC, animated: true)
+            return
+        }
+        
         var gameDetails = GameDetails(cols: 0, rows: 0, toNextLevel: 0)
         
         switch sender.tag {
